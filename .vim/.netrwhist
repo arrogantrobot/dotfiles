@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/gscmnt/ams1158/info/pindel/tiers/fix_tiers'
+let g:netrw_dirhist_2='/gscmnt/ams1158/info/pindel/tiers/fix_tiers/end_minus_1'
+let g:netrw_dirhist_3='/gscmnt/ams1158/info/pindel/tiers/fix_tiers'
+let g:netrw_dirhist_4='/gscmnt/ams1158/info/pindel/tiers/fix_tiers/end_minus_1'
+let g:netrw_dirhist_5='/gscuser/rlong/git/genome/lib/perl/Genome/Model/Tools/Gatk'
+let g:netrw_dirhist_6='/gscuser/rlong/git/genome/lib/perl/Genome/Model/Tools'
+let g:netrw_dirhist_7='/gscuser/rlong/git/genome/lib/perl/Genome/InstrumentData/Imported'
+let g:netrw_dirhist_8='/gscuser/rlong/git/genome/lib/perl/Genome/Model/Tools/Somatic'
+let g:netrw_dirhist_9='/gscuser/rlong/git/varscan_new_repo/build'
