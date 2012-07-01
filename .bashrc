@@ -115,16 +115,7 @@ PS1='\[\e[0;32m\]\u\[\e[m\]  \[\e[1;34m\]\w\[\e[m\] \[\e[1;37m\]$(parse_git_bran
 
 export DISPLAY=:0
 
-export ROS_PACKAGE_PATH=/home/robespierre/ros/
-
 
 export TERM=xterm-color
 
-#export LD_LIBRARY_PATH=/usr/lib32:/home/robespierre/Downloads/ParadiseEO/paradiseo-1.2.1/libxml2/lib
-#export PATH=/home/robespierre/Downloads/ParadiseEO/paradiseo-1.2.1/libxml2/bin:/home/robespierre/Downloads/ParadiseEO/paradiseo-1.2.1/mpich2/bin:/home/robespierre/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-#export LD_LIBRARY_PATH=/usr/lib32:/home/robespierre/Downloads/ParadiseEO/paradiseo-1.2.1/libxml2/lib
-#export PATH=/home/robespierre/Downloads/ParadiseEO/paradiseo-1.2.1/libxml2/bin:/home/robespierre/Downloads/ParadiseEO/paradiseo-1.2.1/mpich2/bin:/home/robespierre/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-#export LD_LIBRARY_PATH=/home/robespierre/Downloads/ParadiseEO/paradiseo-1.2.1/libxml2/lib
-#export PATH=/home/robespierre/Downloads/ParadiseEO/paradiseo-1.2.1/libxml2/bin:/home/robespierre/Downloads/ParadiseEO/paradiseo-1.2.1/mpich2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin
 export LESS=-RFX
-export ADK=/home/robespierre/stuff/adk/android-sdk-linux
