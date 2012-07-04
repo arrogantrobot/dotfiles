@@ -119,3 +119,5 @@ export DISPLAY=:0
 export TERM=xterm-color
 
 export LESS=-RFX
+
+source /etc/profile.d/rvm.sh
