@@ -31,4 +31,10 @@
         co = checkout
         up = pull --rebase origin
 	graph = log --pretty=format:i\"%h %s\" --graph
+	sup = !git stash && git up && git pop
+
+[merge]
+	tool = vimdiff
+[log]
+	decorate = full
         
