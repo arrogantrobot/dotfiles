@@ -113,6 +113,11 @@ parse_git_branch() {
 #PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]~>\[\e[m\] \[\e[1;37m\]$(parse_git_branch) '
 PS1='\[\e[0;32m\]\u\[\e[m\]  \[\e[1;34m\]\w\[\e[m\] \[\e[1;37m\]$(parse_git_branch) \[\e[1;32m\]~>\[\e[m\] '
 
+if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
+    export TERM=xterm-256color
+fi
+
+
 export DISPLAY=:0
 
 
