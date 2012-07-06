@@ -119,5 +119,8 @@ export DISPLAY=:0
 export TERM=xterm-color
 
 export LESS=-RFX
+export EDITOR=vim
+export HISTTIMEFORMAT='%F %T '
+
 
 source /etc/profile.d/rvm.sh
