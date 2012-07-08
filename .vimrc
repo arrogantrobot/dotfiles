@@ -92,7 +92,7 @@ setlocal makeprg=perl\ -c\ %
 
 
 
-colorscheme wombat256mod
+colorscheme manxome
 
 
 
@@ -127,8 +127,6 @@ let g:miniBufExplModSelTarget = 1
  Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
  Bundle 'tpope/vim-rails.git'
  " vim-scripts repos
- Bundle 'L9'
- Bundle 'FuzzyFinder'
  " non github repos
  Bundle 'git://git.wincent.com/command-t.git'
  " ...
@@ -146,3 +144,7 @@ let g:miniBufExplModSelTarget = 1
 
 let g:Powerline_symbols = 'fancy'
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+
+if $COLORTERM == 'gnome-terminal'
+      set t_Co=256
+endif
