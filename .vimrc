@@ -145,6 +145,14 @@ let g:miniBufExplModSelTarget = 1
 let g:Powerline_symbols = 'fancy'
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 
+
+set tags=./tags,$PPTOP/tags,$HOME/flow/tags
+
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_WinWidth = 50
+map <F4> :TlistToggle<cr>
+map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
 if $COLORTERM == 'gnome-terminal'
       set t_Co=256
 endif
