@@ -28,11 +28,6 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
-
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
@@ -49,35 +44,31 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
+PS1='\[\e[0;32m\]\u\[\e[m\]  \[\e[1;34m\]\w\[\e[m\] \[\e[1;37m\]$(parse_git_branch) \[\e[1;32m\]~>\[\e[m\] '
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+}
+
+unset color_prompt force_color_prompt
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
 
-source .bash_aliases
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -lh'
+
+
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -99,33 +90,27 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+set -o vim
+export JAVA_HOME=$HOME/tps/jdk1.7.0_02/
+export M2_HOME=$HOME/tps/apache-maven-3.0.4/
+export PATH=$M2_HOME/bin:$PATH
+export PATH=$HOME/bin:$JAVA_HOME/bin:$PATH
+. $HOME/partek/set_env.sh
+set_env $HOME/partek
 
-CVSROOT=/home/robespierre/cvs; export CVSROOT
-CVSEDITOR="vim"; export CVSEDITOR
-export SWATHJAR="/home/robespierre/.wine/drive_c/Program Files/SWATH 1.9.7/SWATH.jar"
-
-# show git branch in the prompt
-GIT_PS1_SHOWDIRTYSTATE=1
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-#PS1="\w\$(parse_git_branch) $ "
-#PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]~>\[\e[m\] \[\e[1;37m\]$(parse_git_branch) '
-PS1='\[\e[0;32m\]\u\[\e[m\]  \[\e[1;34m\]\w\[\e[m\] \[\e[1;37m\]$(parse_git_branch) \[\e[1;32m\]~>\[\e[m\] '
-
-if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
-    export TERM=xterm-256color
-fi
-
-
-export DISPLAY=:0
-
-
-export TERM=xterm-color
-
-export LESS=-RFX
 export EDITOR=vim
+export TD=$HOME/test_data
+export PATH=~/scripts:$PATH
 export HISTTIMEFORMAT='%F %T '
 
+function curs() { scp -i ~/aws/Flow0.pem $1 ubuntu@23.23.243.122:$2; }
+#if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
+#    export TERM=xterm-256color
+#fi
+case $TERM in
+	xterm|screen)
+		TERM="${TERM}-256color" ;;
+esac
 
-source /etc/profile.d/rvm.sh
+
+
