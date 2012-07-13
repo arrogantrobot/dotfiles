@@ -50,11 +50,10 @@ set t_Co=256
 " from my old file...
 set showmode
 set visualbell
-"set tabstop=4
-set tabstop=8
+set tabstop=4
+"set tabstop=8
 set softtabstop=4
 set shiftwidth=4
-set expandtab
 "set number
 set noautoindent
 
@@ -109,6 +108,10 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
  set laststatus=2
+ set nocompatible               " be iMproved
+ set laststatus=2
+ set encoding=utf-8
+>>>>>>> changes to enhance vim-powerline
  filetype off                   " required!
 
  set rtp+=~/.vim/bundle/vundle/
