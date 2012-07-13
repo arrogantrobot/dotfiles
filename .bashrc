@@ -44,7 +44,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-PS1='\[\e[0;32m\]\u\[\e[m\]  \[\e[1;34m\]\w\[\e[m\] \[\e[1;37m\]$(parse_git_branch) \[\e[1;32m\]~>\[\e[m\] '
+PS1='\[\e[1;32m\][ \[\e[0;32m\]\u\[\e[m\]  \[\e[1;34m\]\w\[\e[m\]  \[\e[1;37m\]$(parse_git_branch) \[\e[1;32m\]]\[\e[m\] '
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
