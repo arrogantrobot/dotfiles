@@ -109,9 +109,7 @@ let g:miniBufExplModSelTarget = 1
 
  set laststatus=2
  set nocompatible               " be iMproved
- set laststatus=2
  set encoding=utf-8
->>>>>>> changes to enhance vim-powerline
  filetype off                   " required!
 
  set rtp+=~/.vim/bundle/vundle/
