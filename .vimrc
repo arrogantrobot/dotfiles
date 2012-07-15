@@ -191,3 +191,5 @@ function! TYToggleBreakMove()
 endfunction
 nmap  <expr> ,b  TYShowBreak()
 nmap  <expr> ,bb  TYToggleBreakMove()
+set pastetoggle=<F2>
+
