@@ -218,3 +218,4 @@ nmap  <expr> ,b  TYShowBreak()
 nmap  <expr> ,bb  TYToggleBreakMove()
 set pastetoggle=<F2>
 
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
