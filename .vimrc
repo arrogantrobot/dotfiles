@@ -150,29 +150,44 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 " mapping to make movements operate on 1 screen line in wrap mode
-function! ScreenMovement(movement)
-  if &wrap && b:gmove == 'yes'
-    return "g" . a:movement
-  else
-    return a:movement
-  endif
-endfunction
-onoremap <silent> <expr> j ScreenMovement("j")
-onoremap <silent> <expr> k ScreenMovement("k")
-onoremap <silent> <expr> 0 ScreenMovement("0")
-onoremap <silent> <expr> ^ ScreenMovement("^")
-onoremap <silent> <expr> $ ScreenMovement("$")
-nnoremap <silent> <expr> j ScreenMovement("j")
-nnoremap <silent> <expr> k ScreenMovement("k")
-nnoremap <silent> <expr> 0 ScreenMovement("0")
-nnoremap <silent> <expr> ^ ScreenMovement("^")
-nnoremap <silent> <expr> $ ScreenMovement("$")
-vnoremap <silent> <expr> j ScreenMovement("j")
-vnoremap <silent> <expr> k ScreenMovement("k")
-vnoremap <silent> <expr> 0 ScreenMovement("0")
-vnoremap <silent> <expr> ^ ScreenMovement("^")
-vnoremap <silent> <expr> $ ScreenMovement("$")
-vnoremap <silent> <expr> j ScreenMovement("j")
+"function! ScreenMovement(movement)
+"  if &wrap && b:gmove == 'yes'
+"    return "g" . a:movement
+"  else
+"    return a:movement
+"  endif
+"endfunction
+"onoremap <silent> <expr> j ScreenMovement("j")
+"onoremap <silent> <expr> k ScreenMovement("k")
+"onoremap <silent> <expr> 0 ScreenMovement("0")
+"onoremap <silent> <expr> ^ ScreenMovement("^")
+"onoremap <silent> <expr> $ ScreenMovement("$")
+"nnoremap <silent> <expr> j ScreenMovement("j")
+"nnoremap <silent> <expr> k ScreenMovement("k")
+"nnoremap <silent> <expr> 0 ScreenMovement("0")
+"nnoremap <silent> <expr> ^ ScreenMovement("^")
+"nnoremap <silent> <expr> $ ScreenMovement("$")
+"vnoremap <silent> <expr> j ScreenMovement("j")
+"vnoremap <silent> <expr> k ScreenMovement("k")
+"vnoremap <silent> <expr> 0 ScreenMovement("0")
+"vnoremap <silent> <expr> ^ ScreenMovement("^")
+"vnoremap <silent> <expr> $ ScreenMovement("$")
+"vnoremap <silent> <expr> j ScreenMovement("j")
+
+
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
+
+
+
 " toggle showbreak
 function! TYShowBreak()
   if &showbreak == ''
