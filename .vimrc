@@ -108,7 +108,7 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
- set nocompatible               " be iMproved
+ set laststatus=2
  filetype off                   " required!
 
  set rtp+=~/.vim/bundle/vundle/
@@ -144,6 +144,7 @@ let g:miniBufExplModSelTarget = 1
 
 let g:Powerline_symbols = 'fancy'
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+"set guifont=ProggyCleanSZBP\ for\ Powerline\ 13
 
 if $COLORTERM == 'gnome-terminal'
       set t_Co=256
