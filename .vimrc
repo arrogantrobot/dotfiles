@@ -64,9 +64,9 @@ autocmd BufRead *.t set syntax=perl
 "set term=builtin_ansi
 "set term=xterm-color
 "set autoindent
-set nohls
+"set nohls
 "set bg=dark
-set bg=light
+"set bg=light
 "autocmd BufNewFile,BufRead *.p? compiler perl
 "if &t_Co > 1
 "    set background=light 
@@ -78,8 +78,8 @@ set bg=light
 map <C-t> :tabnew<CR>   " CTRL + t -- opens a new tab
 " map <C-h> :tabp<CR>  " ALT + h -- moves one tab to the left
 " map<C-l> :tabn<CR>  " ALT + l -- moves one tab to the right
- map <C-left> :tabp<CR>  " CTRL + left arrow -- moves one tab to the left
- map<C-right> :tabn<CR>  " CTRL + right arrow -- moves one tab to the right
+map <C-left> :tabp<CR>  " CTRL + left arrow -- moves one tab to the left
+map<C-right> :tabn<CR>  " CTRL + right arrow -- moves one tab to the right
 
 " turn on some folding attributes
 " let perl_fold = 0
@@ -107,41 +107,39 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
- set laststatus=2
- set nocompatible               " be iMproved
- set encoding=utf-8
- filetype off                   " required!
+set laststatus=2
+filetype off                   " required!
 
- set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
- " let Vundle manage Vundle
- " required! 
- Bundle 'gmarik/vundle'
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
 
- " My Bundles here:
- "
- " original repos on github
- Bundle 'tpope/vim-fugitive'
- Bundle 'Lokaltog/vim-easymotion'
- Bundle 'Lokaltog/vim-powerline'
- Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
- Bundle 'tpope/vim-rails.git'
- " vim-scripts repos
- " non github repos
- Bundle 'git://git.wincent.com/command-t.git'
- " ...
+" My Bundles here:
+"
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+" vim-scripts repos
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
+" ...
 
- filetype plugin indent on     " required!
- "
- " Brief help
- " :BundleList          - list configured bundles
- " :BundleInstall(!)    - install(update) bundles
- " :BundleSearch(!) foo - search(or refresh cache first) for foo
- " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
- "
- " see :h vundle for more details or wiki for FAQ
- " NOTE: comments after Bundle command are not allowed..
+filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
 
 let g:Powerline_symbols = 'fancy'
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
@@ -155,9 +153,9 @@ let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
 map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
-if $COLORTERM == 'gnome-terminal'
-      set t_Co=256
-endif
+"if $COLORTERM == 'gnome-terminal'
+"      set t_Co=256
+"endif
 
 " mapping to make movements operate on 1 screen line in wrap mode
 "function! ScreenMovement(movement)
