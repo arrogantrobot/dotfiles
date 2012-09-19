@@ -52,12 +52,6 @@ parse_git_branch() {
 
 unset color_prompt force_color_prompt
 
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
-}
-
-unset color_prompt force_color_prompt
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -97,7 +91,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 set -o vim
+<<<<<<< HEAD
 export JDK_HOME=$HOME/tps/jdk1.7.0_02/
+=======
+>>>>>>> b7964b5b1973b54b32c338dbaa09bd267705df9c
 export JAVA_HOME=$HOME/tps/jdk1.7.0_02/
 export M2_HOME=$HOME/tps/apache-maven-3.0.4/
 export PATH=$M2_HOME/bin:$PATH
@@ -105,6 +102,7 @@ export PATH=$HOME/bin:$JAVA_HOME/bin:$PATH
 . $HOME/partek/set_env.sh
 set_env $HOME/partek
 
+<<<<<<< HEAD
 CVSROOT=/home/robespierre/cvs; export CVSROOT
 CVSEDITOR="vim"; export CVSEDITOR
 export SWATHJAR="/home/robespierre/.wine/drive_c/Program Files/SWATH 1.9.7/SWATH.jar"
@@ -126,11 +124,23 @@ export DISPLAY=:0
 export TERM=xterm-color
 
 export LESS=-RFX
+=======
+>>>>>>> b7964b5b1973b54b32c338dbaa09bd267705df9c
 export EDITOR=vim
 export TD=$HOME/test_data
 export PATH=~/scripts:$PATH
 export HISTTIMEFORMAT='%F %T '
 export FLOW_SERVER=/home/rlong/maven
+
+function curs() { scp -i ~/aws/Flow0.pem $1 ubuntu@23.23.243.122:$2; }
+#if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
+#    export TERM=xterm-256color
+#fi
+case $TERM in
+	xterm|screen)
+		TERM="${TERM}-256color" ;;
+esac
+
 
 function curs() { scp -i ~/aws/Flow0.pem $1 ubuntu@23.23.243.122:$2; }
 #if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
