@@ -97,6 +97,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 set -o vim
+export JDK_HOME=$HOME/tps/jdk1.7.0_02/
 export JAVA_HOME=$HOME/tps/jdk1.7.0_02/
 export M2_HOME=$HOME/tps/apache-maven-3.0.4/
 export PATH=$M2_HOME/bin:$PATH
@@ -129,6 +130,7 @@ export EDITOR=vim
 export TD=$HOME/test_data
 export PATH=~/scripts:$PATH
 export HISTTIMEFORMAT='%F %T '
+export FLOW_SERVER=/home/rlong/maven
 
 function curs() { scp -i ~/aws/Flow0.pem $1 ubuntu@23.23.243.122:$2; }
 #if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
