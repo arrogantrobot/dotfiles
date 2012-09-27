@@ -126,4 +126,4 @@ export EDITOR=vim
 export HISTTIMEFORMAT='%F %T '
 
 
-source /etc/profile.d/rvm.sh
+#source /etc/profile.d/rvm.sh
