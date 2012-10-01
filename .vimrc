@@ -3,7 +3,8 @@
 set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
 set ruler           " Show the line and column numbers of the cursor
-"set ignorecase      " Do case insensitive matching
+set ignorecase      " Do case insensitive matching
+set smartcase
 set incsearch       " Incremental search
 set autowrite       " Automatically save before commands like :next and :make
 set hidden          " Use hidden buffers
